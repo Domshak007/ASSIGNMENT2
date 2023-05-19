@@ -56,3 +56,24 @@ balance -= amount;
 
             switch (choice) {
                 case 1:
+               System.out.print("Enter withdrawal amount: ");
+                    int withdrawalAmount = scanner.nextInt();
+                    System.out.println(atm.withdraw(withdrawalAmount));
+                    break;
+                case 2:
+                    System.out.print("Enter deposit amount: ");
+                    int depositAmount = scanner.nextInt();
+                    System.out.println(atm.deposit(depositAmount));
+                    break;
+                case 3:
+                    System.out.println("Total transactions: " + atm.getTransactionCount());
+                    break;
+                case 4:
+                    System.out.println("Exiting ATM. Thank you!");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
