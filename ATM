@@ -17,3 +17,23 @@ public class ATM {
         } else if (amount < 30000) {
             return "Minimum withdrawal amount is 30,000.";
         } else {
+balance -= amount;
+            transactionCount++;
+            return "Withdrawal successful. Remaining balance: " + balance;
+        }
+    }
+
+    public String deposit(int amount) {
+        balance += amount;
+        transactionCount++;
+        return "Deposit successful. Current balance: " + balance;
+    }
+
+    public int getTransactionCount() {
+        return transactionCount;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter initial balance: ");
+        int initialBalance = scanner.nextInt();
