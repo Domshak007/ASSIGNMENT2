@@ -37,3 +37,22 @@ balance -= amount;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter initial balance: ");
         int initialBalance = scanner.nextInt();
+ System.out.print("Enter withdrawal limit: ");
+        int withdrawalLimit = scanner.nextInt();
+
+        ATM atm = new ATM(initialBalance, withdrawalLimit);
+
+        System.out.println("\nATM Initialized with initial balance: " + initialBalance);
+        System.out.println("Withdrawal Limit: " + withdrawalLimit);
+
+        while (true) {
+            System.out.println("\nSelect an option:");
+            System.out.println("1. Withdraw");
+            System.out.println("2. Deposit");
+            System.out.println("3. Check Transaction Count");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
